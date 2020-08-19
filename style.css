@@ -1,0 +1,276 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Avenir Next", "Avenir", sans-serif;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8em;
+    background-color: white;
+    color: rosybrown;
+}
+
+section {
+    margin: 1em;
+    padding: 1em;
+}
+
+header,
+main,
+footer {
+    margin: 0 auto;
+}
+
+header {
+    padding: 2em;
+    text-align: center;
+    background-image: url("unsplash.jpg"); /*Photo by Khoa Pham on Unsplash*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+header section {
+    margin: 0 auto;
+    max-width: 640px;
+    margin-bottom: 2.3em;
+    text-decoration: justify;
+}
+
+#hamburger-menu {
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#hamburger-menu a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+#hamburger-menu a:hover {
+    color: lightgrey;
+}
+
+#hamburger-menu input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+#hamburger-menu span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: white;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    background: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#hamburger-menu span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#hamburger-menu span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#hamburger-menu input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: white;
+}
+
+#hamburger-menu input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#hamburger-menu input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+    position: absolute;
+    width: 100%;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: rosybrown;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#hamburger-menu input:checked ~ ul {
+    transform: none;
+}
+
+#backTop {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    z-index: 99;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rosybrown;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 25px;
+}
+
+#backTop:hover {
+    color: gray;
+}
+
+h1 {
+    margin: 0.1em 0;
+    text-transform: uppercase;
+}
+
+main {
+    max-width: 100%;
+}
+
+h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h3 {
+    color: gray;
+}
+
+.about-me {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    text-decoration: justify;
+}
+
+.advantages {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.advantages .column ul {
+    list-style: none;
+}
+
+.advantages .column li::before {
+    content: "•";
+    color: gray;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.beata img {
+    margin: 0 auto;
+    max-width: 125px;
+    position: center;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+.contact-me {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.phone, .email {
+    color: gray;
+}
+
+footer {
+    background-color: white;
+    text-align: right;
+    color: rosybrown;
+    padding: 0.5em;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+@media only screen and (max-width: 576px) {
+    .advantages,
+    .contact-us {
+        display: block;
+    }
+    .advantages .column {
+        max-width: 100%;
+    }
+
+    .contact-us .column {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    img {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .advantages,
+    .contact-us {
+        display: block;
+    }
+    .advantages .column {
+        max-width: 100%;
+    }
+
+   .contact-us .column {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    img {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    footer {
+        text-align: center;
+    }
+}
